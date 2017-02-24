@@ -67,8 +67,12 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
+'Assets/Scripts/DestroyByBoundary.cs'
+'Assets/Scripts/DestroyByContact.cs'
+'Assets/Scripts/GameController.cs'
 'Assets/Scripts/Mover.cs'
 'Assets/Scripts/PlayerController.cs'
+'Assets/Scripts/RandomRotator.cs'
 'Assets/TutorialInfo/Scripts/TutorialInfo.cs'
 'Assets/_Completed-Assets/Scripts/Done_BGScroller.cs'
 'Assets/_Completed-Assets/Scripts/Done_DestroyByBoundary.cs'
