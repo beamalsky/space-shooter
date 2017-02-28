@@ -1,9 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	
+	public GUIText scoreText;
+	private int score;
+	public GUIText restartText;
+	public GUIText gameOverText;
+	private bool gameOver;
+	private bool restart;
+
 	public GameObject hazard;
 	public GameObject hazard1;
 	public GameObject hazard2;
@@ -17,11 +25,27 @@ public class GameController : MonoBehaviour {
 
 	//build array, begin coroutine
 	void Start () {
+		score = 0;
+		UpdateScore ();
+		gameOver = false;
+		restart = false;
+
+		restartText.text = "";
+		gameOverText.text = "";
+
 		hazards = new GameObject[3];
 		hazards [0] = hazard;
 		hazards [1] = hazard1;
 		hazards [2] = hazard2;
 		StartCoroutine (SpawnWaves ());
+	}
+
+	void Update () {
+		if (restart) {
+			if (Input.GetKeyDown ("r")) {
+				SceneManager.LoadScene("Main");
+			}
+		}
 	}
 
 	//pick a random gameobject from an array
@@ -41,6 +65,27 @@ public class GameController : MonoBehaviour {
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
+
+			if (gameOver) {
+				restartText.text = "press 'r' for restart";
+				restart = true;
+				break;
+			}
 		}
 	}
+
+	public void AddScore (int newScoreValue) {
+		score += newScoreValue;
+		UpdateScore ();
+	}
+
+	void UpdateScore () {
+		scoreText.text = "Score: " + score;
+	}
+
+	public void GameOver () {
+		gameOverText.text = "GAME OVER";
+		gameOver = true;
+	}
+
 }
