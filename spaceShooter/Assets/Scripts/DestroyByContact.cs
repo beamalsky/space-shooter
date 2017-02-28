@@ -23,7 +23,7 @@ public class DestroyByContact : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		tf = GetComponent<Transform> ();
 
-		if (other.tag == "Boundary") {
+		if ((other.tag == "Boundary") || (other.tag == "Enemy") ) {
 			return;
 		} else {
 			Instantiate (explosion, tf.position, tf.rotation);

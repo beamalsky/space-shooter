@@ -65,11 +65,11 @@ public class GameController : MonoBehaviour {
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
+			spawnWait = spawnWait - 0.05f;
 
 			if (gameOver) {
 				restartText.text = "press 'r' for restart";
 				restart = true;
-				break;
 			}
 		}
 	}

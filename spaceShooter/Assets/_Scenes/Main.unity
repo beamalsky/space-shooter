@@ -1025,7 +1025,7 @@ MonoBehaviour:
   hazard: {fileID: 1384484413151972, guid: 7dd48baa0b7004946bc841a9e7c7aa38, type: 2}
   hazard1: {fileID: 1264700802007686, guid: 9f9ad176e6ec944e59c9313a8f4ff901, type: 2}
   hazard2: {fileID: 1750430562378976, guid: 18a663e84cd1143a3b47eb12ef2dffbf, type: 2}
-  spawnValues: {x: 9.5, y: 0, z: 33}
+  spawnValues: {x: 9.5, y: 0, z: 25}
   hazardCount: 15
   spawnWait: 0.5
   startWait: 0
@@ -1052,7 +1052,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5599459dae9184b0cb798af160d341a4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 64122a03019d243189b23e5b3f4b8f68, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
